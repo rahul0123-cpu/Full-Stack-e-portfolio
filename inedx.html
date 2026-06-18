@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full Stack Development ePortfolio by Rahul Kumar Yadav - CET138 Assignment 1" />
+  <meta name="keywords" content="Full Stack Development, HTML, CSS, Bootstrap, JavaScript, ePortfolio" />
+  <meta name="author" content="Rahul Kumar Yadav" />
+  <title>Full Stack Development | Rahul Kumar Yadav</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+
+<!-- ─── Scroll Progress ─────────────────────────────────────── -->
+<div id="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00d4ff,#7c3aed);z-index:9998;width:0%;transition:width 0.1s;"></div>
+
+<!-- ─── Loading Screen ──────────────────────────────────────── -->
+<div id="loading-screen">
+  <div class="loader-logo">Full stack Development</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+
+  <div class="loader-pct" id="loader-pct">0%</div>
+</div>
+
+<!-- ─── Particles ───────────────────────────────────────────── -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ─── Navigation ──────────────────────────────────────────── -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#home" class="nav-logo" aria-label="Home">
+    <span class="nav-logo-name">Rahul Kumar Yadav</span>
+    <span class="nav-logo-sub">CET138 · bj20vx · Full Stack Development </span>
+  </a>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+
+    <li><a href="#fsd">Full Stack</a></li>
+    <li><a href="#html-section">HTML</a></li>
+    <li><a href="#css-section">CSS</a></li>
+    <li><a href="#bootstrap-section">Bootstrap</a></li>
+    <li><a href="#js-section">JavaScript</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+      <span id="theme-toggle-icon">☀️</span>
+    </button>
+    <button id="hamburger" onclick="toggleMobileNav()" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="#home" onclick="closeMobileNav()">🏠 Home</a>
+  <a href="#about" onclick="closeMobileNav()">👤 About</a>
+  <a href="#fsd" onclick="closeMobileNav()">🌐 Full Stack Development</a>
+
+  <a href="#html-section" onclick="closeMobileNav()">🔤 HTML</a>
+  <a href="#css-section" onclick="closeMobileNav()">🎨 CSS</a>
+  <a href="#bootstrap-section" onclick="closeMobileNav()">📦 Bootstrap</a>
+  <a href="#js-section" onclick="closeMobileNav()">⚡ JavaScript</a>
+  <a href="#contact" onclick="closeMobileNav()">📬 Contact</a>
+</div>
+
+<!-- ─── Welcome Banner ──────────────────────────────────────── -->
+<div id="welcome-banner" role="banner">
+  <span class="welcome-badge">🎓 CET138 Full Stack Development · Assignment 1</span>
+  <h1 class="welcome-title">Welcome to My Full Stack<br>Development ePortfolio</h1>
+  <p class="welcome-sub">Full stack Development in action</p>
+
+</div>
+
+
+<!-- ─── HERO ────────────────────────────────────────────────── -->
+<section id="home" aria-label="Hero section" style="padding-top:4rem;">
+  <div id="hero" style="padding-top:0.5rem;min-height:auto;">
+    <div class="hero-inner" style="align-items:start;gap:2.5rem;"> 
+      <!-- Left -->
+      <div class="hero-left">
+        <p class="hero-greeting">👋 Hello, World!</p>
+        <h2 class="hero-name">Hi, I'm <span>Rahul<br>Kumar Yadav</span></h2>
+        <p class="hero-role"> Full Stack Developer</p>
+
+        
+        <div class="typing-wrap">I am a <span id="typing-text"></span></div>
+        <p class="hero-desc">
+          A passionate web development student studying Full Stack Development at ISMT College. 
+          I enjoy building responsive, accessible, and visually engaging web experiences using 
+          HTML, CSS, Bootstrap, and JavaScript.
+        </p>
+        <div class="hero-btns">
+          <a href="#fsd" class="btn-primary">🚀 View Portfolio</a>
+          <a href="#contact" class="btn-outline">📬 Contact Me</a>
+        </div>
+      </div>
+      <!-- Right: Student Card -->
+      <div class="hero-card" role="complementary" aria-label="Student details">
+        <div class="hero-card-title">📋 Student Details</div>
+        <div class="hero-card-detail">
+          <div class="detail-icon">👤</div>
+          <div><div class="detail-label">Full Name</div><div class="detail-value">Rahul Kumar Yadav</div></div>
+        </div>
+        <div class="hero-card-detail">
+          <div class="detail-icon">🆔</div>
+          <div><div class="detail-label">Canvas ID</div><div class="detail-value">bj20vx</div></div>
+        </div>
+        <div class="hero-card-detail">
+          <div class="detail-icon">📧</div>
+          <div><div class="detail-label">Email</div><div class="detail-value">btit25a.rhl@ismt.edu.np</div></div>
+        </div>
+        <div class="hero-card-detail">
+          <div class="detail-icon">📱</div>
+          <div><div class="detail-label">Contact</div><div class="detail-value">+977 9709148535</div></div>
+        </div>
+        <div class="hero-card-detail">
+          <div class="detail-icon">📚</div>
+          <div><div class="detail-label">Module</div><div class="detail-value">CET138 Full Stack Development</div></div>
+        </div>
+        <div class="hero-card-detail">
+          <div class="detail-icon">🏫</div>
+          <div><div class="detail-label">Institution</div><div class="detail-value">ISMT College</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── ABOUT ───────────────────────────────────────────────── -->
+<section id="about" class="section-full" aria-label="About me">
+  <div class="section-inner">
+    <span class="section-label reveal">01 · About Me</span>
+    <h2 class="section-title reveal">Who Am <span>I?</span></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I am <strong>Rahul Kumar Yadav</strong>, a dedicated and enthusiastic technology student currently studying Full Stack Development at ISMT College. I have a deep passion for web development and I am committed to learning the skills needed to build modern, functional, and beautiful web applications.</p>
+        <p>My journey in web development started with an interest in how websites are built and how they work behind the scenes. I enjoy every aspect of the process — from writing clean semantic HTML, styling with CSS, using Bootstrap for responsive layouts, to adding interactivity with JavaScript.</p>
+        <p>My career goal is to become a professional Full Stack Developer, working on both the frontend and backend of web applications. I am always eager to learn new technologies and improve my coding skills every day.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <span class="badge badge-blue">HTML5</span>
+          <span class="badge badge-purple">CSS3</span>
+          <span class="badge badge-green">Bootstrap 5</span>
+          <span class="badge badge-yellow">JavaScript</span>
+          <span class="badge badge-blue">Responsive Design</span>
+        </div>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-box glass-card">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Topics Covered</div>
+        </div>
+        <div class="stat-box glass-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Live Demos</div>
+        </div>
+        <div class="stat-box glass-card">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Mini Project</div>
+        </div>
+        <div class="stat-box glass-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Dedication</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 1 · FULL STACK DEVELOPMENT
+     ════════════════════════════════════════════════════════════ -->
+<section id="fsd" class="section" aria-label="Full Stack Development">
+  <span class="section-label reveal">Section 01</span>
+  <h2 class="section-title reveal">What Is Full Stack <span>Development?</span></h2>
+  <p class="section-desc reveal">Full Stack Development refers to the process of building complete web applications — both the visible frontend that users interact with, and the backend server logic and database that power it.</p>
+
+  <!-- Definition cards -->
+<div class="topics-grid reveal">
+
+  <div class="topic-card">
+    <span class="topic-icon">🖥️</span>
+    <div class="topic-name">Frontend</div>
+    <div class="topic-desc">
+      Everything a user sees and interacts with in a browser — built with HTML, CSS, and JavaScript.
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-icon">⚙️</span>
+    <div class="topic-name">Backend</div>
+    <div class="topic-desc">
+      The server-side logic that processes requests, handles authentication, and communicates with the database.
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-icon">🗄️</span>
+    <div class="topic-name">Database</div>
+    <div class="topic-desc">
+      Stores and manages all application data persistently — e.g. MySQL, PostgreSQL, MongoDB.
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-icon">🔗</span>
+    <div class="topic-name">APIs</div>
+    <div class="topic-desc">
+      Connects frontend and backend. RESTful APIs allow data to be exchanged between layers securely.
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-icon">📱</span>
+    <div class="topic-name">Responsive Design</div>
+    <div class="topic-desc">
+      Ensuring the application works beautifully on all screen sizes — mobile, tablet, and desktop.
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <span class="topic-icon">🌐</span>
+    <div class="topic-name">Fetch & APIs</div>
+    <div class="topic-desc">
+      <code>fetch()</code> sends HTTP requests to external APIs.
+      Use <code>async/await</code> to handle the response,
+      <code>response.json()</code> to parse data, and
+      <code>try/catch</code> for error handling.
+    </div>
+  </div>
+
+</div>
+
+  <!-- Deployment Layer Card -->
+  <div class="glass-card reveal" style="margin-bottom:2rem;">
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🚀 Deployment &amp; Hosting — The 4th Layer</h3>
+    <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;">A full stack application also needs a <strong>deployment layer</strong> — the infrastructure that makes your app available on the internet. Without it, your code only works on your local machine.</p>
+    <div class="topics-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:1.25rem;">
+      <div class="topic-card">
+        <span class="topic-icon">🌐</span>
+        <div class="topic-name">Web Server</div>
+        <div class="topic-desc"><strong>Apache</strong> or <strong>Nginx</strong> listens for HTTP requests and serves your files or forwards requests to your backend app (e.g. Node.js, PHP).</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">☁️</span>
+        <div class="topic-name">Cloud Hosting</div>
+        <div class="topic-desc">Platforms like <strong>Vercel</strong>, <strong>Netlify</strong> (frontend), <strong>Heroku</strong>, <strong>Render</strong>, or <strong>AWS</strong> host your app on servers accessible worldwide 24/7.</div>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🔒</span>
+        <div class="topic-name">Domain &amp; HTTPS</div>
+        <div class="topic-desc">A custom <strong>domain name</strong> (e.g. rahulfoods.com) and an <strong>SSL certificate</strong> (HTTPS) encrypt traffic between the user's browser and your server.</div>
+      </div>
+    </div>
+    <div class="info-box" style="border-color:#7c3aed;">
+      <strong>Complete 4-Layer Stack:</strong> Frontend (HTML/CSS/JS) → Backend (Node.js / PHP) → Database (MySQL / MongoDB) → <strong>Deployment</strong> (Web Server + Cloud Hosting + Domain). A full stack developer understands and can work across all four layers.
+    </div>
+  </div>
+
+  <!-- Architecture Diagram -->
+  <div class="two-col" style="gap:2rem;align-items:start;">
+    <div class="glass-card reveal">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🏗️ Architecture Diagram</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.5rem;">Click each layer to see what happens in a food delivery app:</p>
+      <div class="arch-diagram">
+        <div class="arch-layer frontend" id="fsd-frontend" onclick="fsdStep('frontend')" style="cursor:pointer;">
+          <div class="arch-layer-title">🌐 Frontend</div>
+          <div class="arch-layer-tech">HTML · CSS · Bootstrap · JavaScript</div>
+        </div>
+        <div class="arch-arrow">↕</div>
+        <div class="arch-layer backend" id="fsd-backend" onclick="fsdStep('backend')" style="cursor:pointer;">
+          <div class="arch-layer-title">⚙️ Backend / Server</div>
+          <div class="arch-layer-tech">PHP / Python · REST API · Auth</div>
+        </div>
+        <div class="arch-arrow">↕</div>
+        <div class="arch-layer database" id="fsd-database" onclick="fsdStep('database')" style="cursor:pointer;">
+          <div class="arch-layer-title">🗄️ Database</div>
+          <div class="arch-layer-tech">MySQL · PostgreSQL · MongoDB</div>
+        </div>
+      </div>
+      <div id="fsd-info" class="info-box" style="margin-top:1rem;">
+        👆 Click a layer above to learn what it does in the food delivery app.
+      </div>
+    </div>
+
+    <div class="glass-card reveal">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🍔 Real-World Example: Food Delivery</h3>
+      <div class="info-box" style="border-color:#00d4ff;">
+        <strong>Step 1 — Frontend (Customer):</strong> The customer visits the website, browses the menu, selects items, and clicks "Order Now". JavaScript validates the form and sends the order to the server.
+      </div>
+      <div class="info-box" style="border-color:#7c3aed;">
+        <strong>Step 2 — Backend (Server):</strong> PHP/Python receives the HTTP request, verifies the customer is logged in, calculates the total, processes the payment gateway, and prepares an order object.
+      </div>
+      <div class="info-box" style="border-color:#10b981;">
+        <strong>Step 3 — Database (Storage):</strong> MySQL saves the order with details: customer ID, items, price, timestamp, and delivery address. The server sends back a confirmation response.
+      </div>
+      <div class="info-box" style="border-color:#f59e0b;">
+        <strong>Step 4 — Response:</strong> JavaScript receives the confirmation and shows the customer "Your order #1042 is confirmed! Arriving in 30 minutes." — all without reloading the page.
+      </div>
+    </div>
+  </div>
+
+  <!-- Backend Code Example -->
+  <div class="two-col reveal" style="margin-top:2rem;">
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">⚙️ Backend Code — PHP</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">PHP runs on the server. It receives the order from the frontend, saves it to the database, and sends back a JSON response.</p>
+      <div class="code-label">server.php</div>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">// Receive order data sent from JavaScript fetch()</span>
+<span class="attr">$data</span>  = <span class="val">json_decode</span>(file_get_contents(<span class="val">'php://input'</span>), true);
+<span class="attr">$item</span>  = <span class="val">$data</span>[<span class="val">'item'</span>];
+<span class="attr">$price</span> = <span class="val">$data</span>[<span class="val">'price'</span>];
+
+<span class="comment">// Save order into MySQL database</span>
+<span class="attr">$stmt</span> = <span class="val">$pdo</span>->prepare(
+  <span class="val">"INSERT INTO orders (item, price) VALUES (?, ?)"</span>
+);
+<span class="attr">$stmt</span>->execute([<span class="val">$item</span>, <span class="val">$price</span>]);
+
+<span class="comment">// Send JSON success response back to browser</span>
+<span class="val">echo</span> json_encode([
+  <span class="val">'status'</span>  => <span class="val">'success'</span>,
+  <span class="val">'message'</span> => <span class="val">'Order saved!'</span>
+]);
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🟢 Backend Code — Node.js + MongoDB</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">Node.js with Express and MongoDB (a NoSQL database) stores orders as JSON documents — no fixed table structure required.</p>
+      <div class="code-label">server.js (Node.js + Express + MongoDB)</div>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">// Import Express and MongoDB client (Mongoose ODM)</span>
+<span class="attr">const</span> express  = require(<span class="val">'express'</span>);
+<span class="attr">const</span> mongoose = require(<span class="val">'mongoose'</span>);
+<span class="attr">const</span> app      = express();
+app.use(express.json());
+
+<span class="comment">// Connect to MongoDB Atlas (cloud database)</span>
+mongoose.<span class="attr">connect</span>(<span class="val">'mongodb+srv://user:pass@cluster.mongodb.net/foodapp'</span>);
+
+<span class="comment">// Define a MongoDB schema (structure of each document)</span>
+<span class="attr">const</span> Order = mongoose.model(<span class="val">'Order'</span>, {
+  item:      String,
+  price:     Number,
+  createdAt: { type: Date, default: Date.now }
+});
+
+<span class="comment">// POST /api/order — saves order as a MongoDB document</span>
+app.<span class="attr">post</span>(<span class="val">'/api/order'</span>, async (req, res) => {
+  <span class="attr">const</span> order = new Order(req.body);
+  await order.<span class="val">save</span>();          <span class="comment">// inserts into MongoDB</span>
+  res.json({ status: <span class="val">'success'</span>, id: order._id });
+});
+
+app.<span class="attr">listen</span>(<span class="val">3000</span>);
+      </div>
+      <div class="info-box" style="border-color:#10b981;margin-top:1rem;font-size:0.82rem;">
+        <strong>MySQL vs MongoDB:</strong> MySQL stores data in rows and tables (relational). MongoDB stores data as flexible JSON-like documents — ideal for rapidly changing data structures like food orders with varying options.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 2 · HTML
+     ════════════════════════════════════════════════════════════ -->
+<section id="html-section" class="section-full" aria-label="HTML Section">
+  <div class="section-inner">
+    <span class="section-label reveal">Section 02</span>
+    <h2 class="section-title reveal"><span>HTML</span> — HyperText Markup Language</h2>
+    <p class="section-desc reveal">HTML is the standard markup language used to create web pages. It provides the skeleton and structure of every website on the internet.</p>
+
+    <!-- HTML Topics -->
+    <div class="two-col reveal" style="margin-bottom:2rem;">
+      <div class="glass-card">
+        <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.25rem;">📖 Core HTML Topics</h3>
+        <table class="tags-table" aria-label="HTML tags reference">
+          <thead>
+            <tr><th>Tag</th><th>Purpose</th><th>Example Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tag-name">&lt;html&gt;</td><td>Root element of the page</td><td>Wraps all HTML content</td></tr>
+            <tr><td class="tag-name">&lt;head&gt;</td><td>Metadata container</td><td>Title, CSS links, meta tags</td></tr>
+            <tr><td class="tag-name">&lt;h1&gt;–&lt;h6&gt;</td><td>Headings (hierarchy)</td><td>Page titles, section titles</td></tr>
+            <tr><td class="tag-name">&lt;p&gt;</td><td>Paragraph of text</td><td>Body content, descriptions</td></tr>
+            <tr><td class="tag-name">&lt;a&gt;</td><td>Hyperlink</td><td>Navigation, external links</td></tr>
+            <tr><td class="tag-name">&lt;img&gt;</td><td>Image element</td><td>Photos, icons, logos</td></tr>
+            <tr><td class="tag-name">&lt;ul&gt; / &lt;ol&gt;</td><td>Unordered / ordered list</td><td>Navigation menus, steps</td></tr>
+            <tr><td class="tag-name">&lt;table&gt;</td><td>Tabular data</td><td>Price tables, schedules</td></tr>
+            <tr><td class="tag-name">&lt;form&gt;</td><td>Input form container</td><td>Login, contact, order forms</td></tr>
+            <tr><td class="tag-name">&lt;input&gt;</td><td>User input field</td><td>Text, email, password</td></tr>
+            <tr><td class="tag-name">&lt;div&gt;</td><td>Block container</td><td>Layout sections</td></tr>
+            <tr><td class="tag-name">&lt;span&gt;</td><td>Inline container</td><td>Styling text portions</td></tr>
+            <tr><td class="tag-name">&lt;meta&gt;</td><td>Page metadata (in &lt;head&gt;)</td><td>charset, viewport, description, keywords</td></tr>
+            <tr><td class="tag-name">&lt;link&gt;</td><td>Links external resources</td><td>CSS stylesheets, favicons</td></tr>
+            <tr><td class="tag-name">&lt;script&gt;</td><td>Embeds or links JavaScript</td><td>Custom JS, CDN libraries</td></tr>
+            <tr><td class="tag-name">&lt;video&gt;</td><td>Embeds a video player</td><td>Product demos, tutorials</td></tr>
+            <tr><td class="tag-name">&lt;audio&gt;</td><td>Embeds an audio player</td><td>Music, podcasts, sound effects</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-card">
+        <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">💡 HTML Structure Explained</h3>
+        <div class="info-box">
+          <strong>DOCTYPE Declaration:</strong> <code>&lt;!DOCTYPE html&gt;</code> tells the browser this is an HTML5 document. Always placed at the very top.
+        </div>
+        <div class="info-box" style="border-color:#7c3aed;">
+          <strong>Semantic HTML:</strong> Using meaningful tags like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> instead of generic <code>&lt;div&gt;</code> improves accessibility and SEO.
+        </div>
+        <div class="info-box" style="border-color:#10b981;">
+          <strong>Attributes:</strong> Tags can have attributes like <code>class</code>, <code>id</code>, <code>href</code>, <code>src</code>, and <code>alt</code> which provide extra information or functionality.
+        </div>
+        <div class="info-box" style="border-color:#f59e0b;">
+          <strong>Nesting:</strong> HTML elements can be nested inside each other to create structure. Proper nesting is essential for valid, readable HTML code.
+        </div>
+        <div class="info-box" style="border-color:#00d4ff;">
+          <strong>ARIA Attributes:</strong> Accessible Rich Internet Applications attributes like <code>aria-label</code>, <code>aria-hidden</code>, and <code>role</code> make pages accessible to screen readers and assistive technologies. Example: <code>&lt;button aria-label="Close menu"&gt;</code>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Snippet -->
+    <div class="glass-card reveal" style="margin-bottom:2rem;">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🍽️ Sample Page: Rahul Food Delivery</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">Below is the HTML code for a sample restaurant page using proper semantic structure:</p>
+      <div class="code-label">index.html</div>
+      <div class="code-block" role="code" aria-label="HTML sample code">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">&lt;!-- Rahul Food Delivery - Sample HTML Page --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html <span class="attr">lang</span>=<span class="val">"en"</span>&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta <span class="attr">charset</span>=<span class="val">"UTF-8"</span>&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Rahul Food Delivery<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"style.css"</span>&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+
+  <span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>🍔 Rahul Food Delivery<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;nav&gt;</span>
+      <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a <span class="attr">href</span>=<span class="val">"#menu"</span>&gt;</span>Menu<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a <span class="attr">href</span>=<span class="val">"#contact"</span>&gt;</span>Contact<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
+  <span class="tag">&lt;/header&gt;</span>
+
+  <span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;section <span class="attr">id</span>=<span class="val">"menu"</span>&gt;</span>
+      <span class="tag">&lt;h2&gt;</span>Our Menu<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;img <span class="attr">src</span>=<span class="val">"burger.jpg"</span> <span class="attr">alt</span>=<span class="val">"Delicious Burger"</span>&gt;</span>
+      <span class="tag">&lt;table&gt;</span>
+        <span class="tag">&lt;tr&gt;&lt;th&gt;</span>Item<span class="tag">&lt;/th&gt;&lt;th&gt;</span>Price<span class="tag">&lt;/th&gt;&lt;/tr&gt;</span>
+        <span class="tag">&lt;tr&gt;&lt;td&gt;</span>Burger<span class="tag">&lt;/td&gt;&lt;td&gt;</span>Rs. 250<span class="tag">&lt;/td&gt;&lt;/tr&gt;</span>
+        <span class="tag">&lt;tr&gt;&lt;td&gt;</span>Pizza<span class="tag">&lt;/td&gt;&lt;td&gt;</span>Rs. 500<span class="tag">&lt;/td&gt;&lt;/tr&gt;</span>
+      <span class="tag">&lt;/table&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+
+    <span class="tag">&lt;section <span class="attr">id</span>=<span class="val">"contact"</span>&gt;</span>
+      <span class="tag">&lt;h2&gt;</span>Contact Us<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;form&gt;</span>
+        <span class="tag">&lt;input <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">placeholder</span>=<span class="val">"Your Name"</span>&gt;</span>
+        <span class="tag">&lt;input <span class="attr">type</span>=<span class="val">"email"</span> <span class="attr">placeholder</span>=<span class="val">"Your Email"</span>&gt;</span>
+        <span class="tag">&lt;button <span class="attr">type</span>=<span class="val">"submit"</span>&gt;</span>Send<span class="tag">&lt;/button&gt;</span>
+      <span class="tag">&lt;/form&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+
+  <span class="tag">&lt;footer&gt;</span>
+    <span class="tag">&lt;p&gt;</span>&amp;copy; 2026 Rahul Food Delivery<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/footer&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+      </div>
+    </div>
+
+    <!-- HTML Demo Output -->
+    <div class="glass-card reveal">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🎯 HTML Demo Output — Rendered Preview</h3>
+      <div style="background:white;color:#222;border-radius:var(--radius-sm);padding:1.5rem;font-family:Georgia,serif;">
+        <div style="background:#e74c3c;color:white;padding:1rem;margin-bottom:0;font-family:Arial;">
+          <h1 style="margin:0;font-size:1.5rem;">🍔 Rahul Food Delivery</h1>
+          <nav style="margin-top:0.5rem;"><a href="#" style="color:white;margin-right:1rem;">Menu</a><a href="#" style="color:white;">Contact</a></nav>
+        </div>
+        <h2 style="border-bottom:2px solid #ccc;padding-bottom:0.5rem;margin-top:1rem;">Our Menu</h2>
+        <table style="border-collapse:collapse;width:100%;margin-bottom:1rem;">
+          <tr style="background:#f9f9f9;"><th style="border:1px solid #ddd;padding:8px;">Item</th><th style="border:1px solid #ddd;padding:8px;">Price</th><th style="border:1px solid #ddd;padding:8px;">Description</th></tr>
+          <tr><td style="border:1px solid #ddd;padding:8px;">🍔 Burger</td><td style="border:1px solid #ddd;padding:8px;">Rs. 250</td><td style="border:1px solid #ddd;padding:8px;">Beef patty with veggies</td></tr>
+          <tr style="background:#f9f9f9;"><td style="border:1px solid #ddd;padding:8px;">🍕 Pizza</td><td style="border:1px solid #ddd;padding:8px;">Rs. 500</td><td style="border:1px solid #ddd;padding:8px;">Cheese & tomato</td></tr>
+          <tr><td style="border:1px solid #ddd;padding:8px;">🍜 Noodles</td><td style="border:1px solid #ddd;padding:8px;">Rs. 180</td><td style="border:1px solid #ddd;padding:8px;">Spicy chicken noodles</td></tr>
+        </table>
+        <h2 style="border-bottom:2px solid #ccc;padding-bottom:0.5rem;">Contact Us</h2>
+  <p>📍 Biratnagar, Kanchanbari, Nepal &nbsp;|&nbsp; 📞 +977 9709148535 &nbsp;|&nbsp; ✉️ btit25a.rhl@ismt.edu.np</p>
+
+        <div style="background:#f0f0f0;padding:0.75rem;border-radius:4px;">
+          <input type="text" placeholder="Your Name" style="border:1px solid #ccc;padding:0.4rem;margin-right:0.5rem;border-radius:3px;" readonly>
+          <input type="email" placeholder="Your Email" style="border:1px solid #ccc;padding:0.4rem;margin-right:0.5rem;border-radius:3px;" readonly>
+          <button style="background:#e74c3c;color:white;border:none;padding:0.4rem 1rem;border-radius:3px;">Send</button>
+        </div>
+        <footer style="margin-top:1rem;background:#333;color:white;padding:0.75rem;text-align:center;border-radius:4px;font-size:0.85rem;">© 2026 Rahul Food Delivery</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 3 · CSS
+     ════════════════════════════════════════════════════════════ -->
+<section id="css-section" class="section" aria-label="CSS Section">
+  <span class="section-label reveal">Section 03</span>
+  <h2 class="section-title reveal"><span>CSS</span> — Cascading Style Sheets</h2>
+  <p class="section-desc reveal">CSS is the language used to describe the visual presentation of HTML documents. It controls colors, fonts, layout, animations, and responsiveness.</p>
+
+  <!-- Topics overview -->
+  <div class="topics-grid reveal" style="margin-bottom:2rem;">
+    <div class="topic-card"><span class="topic-icon">🎨</span><div class="topic-name">Selectors</div><div class="topic-desc">Target specific HTML elements using class, ID, tag, or attribute selectors.</div></div>
+    <div class="topic-card"><span class="topic-icon">🌈</span><div class="topic-name">Colors & Fonts</div><div class="topic-desc">Apply color schemes and Google Fonts to create visually appealing text and backgrounds.</div></div>
+    <div class="topic-card"><span class="topic-icon">📐</span><div class="topic-name">Box Model</div><div class="topic-desc">Every element has margin, border, padding, and content — the foundation of CSS layout.</div></div>
+    <div class="topic-card"><span class="topic-icon">🔲</span><div class="topic-name">Flexbox</div><div class="topic-desc">One-dimensional layout model for aligning items in rows or columns with powerful alignment controls.</div></div>
+    <div class="topic-card"><span class="topic-icon">🗺️</span><div class="topic-name">Grid</div><div class="topic-desc">Two-dimensional layout system for building complex, responsive grid-based layouts.</div></div>
+    <div class="topic-card"><span class="topic-icon">✨</span><div class="topic-name">Animations</div><div class="topic-desc">Create smooth transitions and keyframe animations to bring your UI to life.</div></div>
+  </div>
+
+  <!-- Before vs After -->
+  <div class="glass-card reveal" style="margin-bottom:2rem;">
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:0.5rem;">👁️ Before CSS vs After CSS</h3>
+    <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;">See how CSS transforms plain HTML into a beautiful design:</p>
+    <div class="css-compare">
+      <div id="before-box" class="css-before">
+        <div class="demo-label">❌ Without CSS</div>
+        <div style="color:var(--text-secondary);">
+          <h2 style="font-size:1.1rem;">Rahul Food Delivery</h2>
+          <p style="font-size:0.85rem;">Order your favourite food</p>
+          <button style="background:none;border:1px solid gray;padding:2px 6px;font-size:0.8rem;cursor:pointer;">Order Now</button>
+        </div>
+      </div>
+      <div class="css-after">
+        <div class="demo-label">✅ With CSS</div>
+        <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:12px;padding:1.25rem;text-align:center;">
+          <h2 style="color:#00d4ff;font-size:1.2rem;margin-bottom:0.3rem;font-family:'Syne',sans-serif;font-weight:800;">🍔 Rahul Food Delivery</h2>
+          <p style="color:#8892b0;font-size:0.8rem;margin-bottom:1rem;">Order your favourite food</p>
+          <button class="demo-btn-animated">Order Now →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CSS Code snippet + Interactive Effects -->
+  <div class="two-col reveal">
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">📝 CSS Properties Explained</h3>
+      <div class="code-label">style.css</div>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">/* CSS Selectors */</span>
+<span class="attr">h1</span> { <span class="val">color: #00d4ff;</span> }
+<span class="attr">.btn</span> { <span class="val">background: blue;</span> }
+<span class="attr">#hero</span> { <span class="val">padding: 4rem 2rem;</span> }
+
+<span class="comment">/* Box Model */</span>
+<span class="attr">.card</span> {
+  <span class="val">margin: 1rem;</span>       <span class="comment">/* outside space */</span>
+  <span class="val">padding: 1.5rem;</span>     <span class="comment">/* inside space */</span>
+  <span class="val">border: 1px solid #ccc;</span>
+  <span class="val">border-radius: 12px;</span>
+}
+
+<span class="comment">/* Flexbox Layout */</span>
+<span class="attr">.nav</span> {
+  <span class="val">display: flex;</span>
+  <span class="val">justify-content: space-between;</span>
+  <span class="val">align-items: center;</span>
+  <span class="val">gap: 1rem;</span>
+}
+
+<span class="comment">/* Grid Layout */</span>
+<span class="attr">.grid</span> {
+  <span class="val">display: grid;</span>
+  <span class="val">grid-template-columns: repeat(3, 1fr);</span>
+  <span class="val">gap: 1.5rem;</span>
+}
+
+<span class="comment">/* CSS Animation */</span>
+<span class="attr">@keyframes fadeIn</span> {
+  <span class="val">from</span> { <span class="val">opacity: 0; transform: translateY(20px);</span> }
+  <span class="val">to</span>   { <span class="val">opacity: 1; transform: translateY(0);</span> }
+}
+<span class="attr">.animate</span> {
+  <span class="val">animation: fadeIn 0.5s ease both;</span>
+}
+
+<span class="comment">/* Responsive Design */</span>
+<span class="attr">@media (max-width: 768px)</span> {
+  <span class="attr">.grid</span> { <span class="val">grid-template-columns: 1fr;</span> }
+}
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🎮 Interactive CSS Effects Demo</h3>
+      <p style="color:var(--text-secondary);font-size:0.82rem;margin-bottom:1.25rem;">Hover over these elements to see CSS transitions and animations in action:</p>
+
+      <div style="margin-bottom:1.25rem;">
+        <p class="code-label">Animated Button</p>
+        <button class="demo-btn-animated">✨ Hover Me!</button>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <p class="code-label">Hover Card Effect</p>
+        <div style="background:var(--bg-card);border:1px solid var(--border-glass);border-radius:var(--radius-sm);padding:1rem;transition:all 0.3s ease;cursor:pointer;" onmouseover="this.style.transform='scale(1.04)';this.style.borderColor='var(--accent-2)';this.style.boxShadow='0 8px 30px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.borderColor='';this.style.boxShadow=''">
+          <div style="font-weight:600;font-size:0.9rem;">CSS Card Hover Effect</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">Scale + glow animation on hover</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <p class="code-label">Color Transition</p>
+        <div style="height:50px;border-radius:var(--radius-sm);background:linear-gradient(90deg,#00d4ff,#7c3aed,#10b981,#f59e0b);background-size:300%;animation:gradMove 3s ease infinite;"></div>
+<style>@keyframes gradMove{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}</style>
+      </div>
+
+      <div>
+        <p class="code-label">Transform: Rotate on Hover</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <div style="width:60px;height:60px;background:rgba(0,212,255,0.15);border:1px solid var(--accent);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:transform 0.4s ease;cursor:pointer;" onmouseover="this.style.transform='rotate(45deg) scale(1.2)'" onmouseout="this.style.transform='rotate(0) scale(1)'">⭐</div>
+          <div style="width:60px;height:60px;background:rgba(124,58,237,0.15);border:1px solid #a78bfa;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:transform 0.4s ease;cursor:pointer;" onmouseover="this.style.transform='rotate(360deg) scale(1.2)'" onmouseout="this.style.transform='rotate(0) scale(1)'">💜</div>
+          <div style="width:60px;height:60px;background:rgba(16,185,129,0.15);border:1px solid var(--accent-3);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:transform 0.6s ease;cursor:pointer;" onmouseover="this.style.transform='skewX(20deg) scale(1.2)'" onmouseout="this.style.transform='skewX(0) scale(1)'">🚀</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CSS Grid Live Demo ── -->
+  <div class="glass-card reveal" style="margin-top:2rem;">
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:0.5rem;">🗺️ CSS Grid — Live Demonstration</h3>
+    <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;">
+      The <code>.topics-grid</code> class uses <strong>CSS Grid</strong> with <code>grid-template-columns: repeat(3, 1fr)</code> to create three equal columns.
+      Resize the browser to see it collapse to 2 columns on tablet and 1 column on mobile.
+    </p>
+
+    <!-- Code snippet -->
+    <div class="two-col" style="gap:2rem;margin-bottom:1.5rem;">
+      <div>
+        <div class="code-label">style.css — Grid Definition</div>
+        <div class="code-block" style="font-size:0.8rem;">
+<span class="comment">/* ── Desktop (> 768px): 3 equal columns ── */</span>
+<span class="attr">.topics-grid</span> {
+  <span class="val">display: grid;</span>
+  <span class="val">grid-template-columns: repeat(3, 1fr);</span>
+  <span class="val">gap: 1.5rem;</span>
+}
+
+<span class="comment">/* ── Tablet (576px – 768px): 2 columns ── */</span>
+<span class="attr">@media (max-width: 768px)</span> {
+  <span class="attr">.topics-grid</span> { <span class="val">grid-template-columns: 1fr 1fr;</span> }
+}
+
+<span class="comment">/* ── Mobile (< 480px): 1 column (stacked) ── */</span>
+<span class="attr">@media (max-width: 480px)</span> {
+  <span class="attr">.topics-grid</span> { <span class="val">grid-template-columns: 1fr;</span> }
+}
+        </div>
+      </div>
+      <div>
+        <div class="code-label">index.html — Grid Markup</div>
+        <div class="code-block" style="font-size:0.8rem;">
+<span class="comment">&lt;!-- Parent: grid container --&gt;</span>
+<span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"topics-grid"</span>&gt;</span>
+
+  <span class="comment">&lt;!-- Child 1: grid item --&gt;</span>
+  <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"topic-card"</span>&gt;</span>
+    Frontend
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="comment">&lt;!-- Child 2: grid item --&gt;</span>
+  <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"topic-card"</span>&gt;</span>
+    Backend
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="comment">&lt;!-- Child 3: grid item --&gt;</span>
+  <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"topic-card"</span>&gt;</span>
+    Database
+  <span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;/div&gt;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live rendered grid preview -->
+    <p class="code-label" style="margin-bottom:0.75rem;">▶ Live Rendered Output — 3-Column CSS Grid</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem;">
+      <div style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);border-radius:var(--radius-sm);padding:1rem;text-align:center;transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">🖥️</div>
+        <div style="font-weight:700;font-size:0.9rem;color:var(--accent);">Column 1</div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.25rem;">Frontend</div>
+      </div>
+      <div style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.3);border-radius:var(--radius-sm);padding:1rem;text-align:center;transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">⚙️</div>
+        <div style="font-weight:700;font-size:0.9rem;color:#a78bfa;">Column 2</div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.25rem;">Backend</div>
+      </div>
+      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius-sm);padding:1rem;text-align:center;transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">🗄️</div>
+        <div style="font-weight:700;font-size:0.9rem;color:var(--accent-3);">Column 3</div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.25rem;">Database</div>
+      </div>
+    </div>
+    <div class="info-box" style="border-color:var(--accent-3);margin-bottom:0;">
+      <strong>How it works:</strong> The parent <code>div</code> with class <code>topics-grid</code> becomes the grid container.
+      Each direct child <code>div</code> automatically becomes a grid item placed into the next available cell.
+      <code>repeat(3, 1fr)</code> means: create 3 columns, each taking <strong>1 fraction</strong> of the available space equally.
+    </div>
+  </div>
+
+  <!-- ── Flexbox Live Demo ── -->
+  <div class="glass-card reveal" style="margin-top:2rem;">
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:0.5rem;">🔲 CSS Flexbox — Live Demonstration</h3>
+    <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;">
+      Flexbox is a <strong>one-dimensional</strong> layout model. Use the buttons below to change <code>justify-content</code> and <code>align-items</code> and see the result instantly.
+    </p>
+    <div class="two-col" style="gap:2rem;margin-bottom:1.25rem;">
+      <div>
+        <div class="code-label">style.css — Flexbox Properties</div>
+        <div class="code-block" style="font-size:0.8rem;">
+<span class="comment">/* Flexbox container */</span>
+<span class="attr">.navbar</span> {
+  <span class="val">display: flex;</span>              <span class="comment">/* enable flexbox */</span>
+  <span class="val">justify-content: space-between;</span> <span class="comment">/* main axis */</span>
+  <span class="val">align-items: center;</span>         <span class="comment">/* cross axis */</span>
+  <span class="val">gap: 1rem;</span>                   <span class="comment">/* space between items */</span>
+  <span class="val">flex-wrap: wrap;</span>            <span class="comment">/* allow wrapping */</span>
+}
+<span class="comment">/* Flex child grows to fill space */</span>
+<span class="attr">.nav-links</span> { <span class="val">flex: 1;</span> }
+
+<span class="comment">/* Common justify-content values: */</span>
+<span class="comment">/* flex-start | center | flex-end */</span>
+<span class="comment">/* space-between | space-around  */</span>
+        </div>
+      </div>
+      <div>
+        <div class="code-label">▶ Live Flexbox Playground</div>
+        <div style="margin-bottom:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+          <span style="font-size:0.78rem;color:var(--text-secondary);">justify-content:</span>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('justify','flex-start')">flex-start</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('justify','center')">center</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('justify','flex-end')">flex-end</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('justify','space-between')">space-between</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('justify','space-around')">space-around</button>
+        </div>
+        <div style="margin-bottom:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+          <span style="font-size:0.78rem;color:var(--text-secondary);">align-items:</span>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('align','flex-start')">flex-start</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('align','center')">center</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('align','flex-end')">flex-end</button>
+          <button class="calc-btn" style="font-size:0.72rem;padding:0.2rem 0.5rem;" onclick="setFlex('align','stretch')">stretch</button>
+        </div>
+        <div id="flex-demo-box" style="display:flex;justify-content:space-between;align-items:center;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.25);border-radius:var(--radius-sm);padding:1rem;height:90px;transition:all 0.3s ease;">
+          <div style="background:rgba(0,212,255,0.25);border:1px solid var(--accent);border-radius:4px;padding:0.4rem 0.75rem;font-size:0.8rem;font-weight:700;color:var(--accent);">Item 1</div>
+          <div style="background:rgba(124,58,237,0.25);border:1px solid #a78bfa;border-radius:4px;padding:0.6rem 0.75rem;font-size:0.8rem;font-weight:700;color:#a78bfa;">Item 2</div>
+          <div style="background:rgba(16,185,129,0.25);border:1px solid var(--accent-3);border-radius:4px;padding:0.4rem 0.75rem;font-size:0.8rem;font-weight:700;color:var(--accent-3);">Item 3</div>
+        </div>
+        <div id="flex-status" style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.4rem;font-family:var(--font-mono);">justify-content: space-between &nbsp;|&nbsp; align-items: center</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CSS Variables & Pseudo-classes ── -->
+  <div class="two-col reveal" style="margin-top:2rem;">
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🎛️ CSS Custom Properties (Variables)</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">CSS variables store reusable values. Define them once in <code>:root</code> and use them anywhere — change one value to update your whole theme.</p>
+      <div class="code-label">style.css — Variables</div>
+      <div class="code-block" style="font-size:0.8rem;">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">/* Define custom properties on :root (global scope) */</span>
+<span class="attr">:root</span> {
+  <span class="val">--primary-color: #00d4ff;</span>
+  <span class="val">--secondary-color: #7c3aed;</span>
+  <span class="val">--font-size-base: 1rem;</span>
+  <span class="val">--border-radius: 12px;</span>
+  <span class="val">--spacing-lg: 2rem;</span>
+}
+
+<span class="comment">/* Use them with var() */</span>
+<span class="attr">.btn</span> {
+  <span class="val">background: var(--primary-color);</span>
+  <span class="val">border-radius: var(--border-radius);</span>
+  <span class="val">padding: var(--spacing-lg);</span>
+}
+
+<span class="comment">/* Dark mode: just redefine the same variables */</span>
+<span class="attr">.dark-mode</span> {
+  <span class="val">--primary-color: #7c3aed;</span>  <span class="comment">/* overrides root */</span>
+}
+      </div>
+      <div class="info-box" style="border-color:var(--accent);margin-top:1rem;font-size:0.82rem;">
+        <strong>Why use variables?</strong> This portfolio uses <code>--accent</code>, <code>--bg-primary</code>, <code>--text-secondary</code> etc. as CSS variables. The entire dark/light theme switch works by redefining these variables on <code>body.light-mode</code> — no JS colour changes needed.
+      </div>
+    </div>
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🖱️ CSS Pseudo-classes &amp; Pseudo-elements</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">Pseudo-classes target elements in a <strong>specific state</strong>. Pseudo-elements style a <strong>specific part</strong> of an element — all without extra HTML.</p>
+      <div class="code-label">style.css — Pseudo-classes</div>
+      <div class="code-block" style="font-size:0.8rem;">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">/* :hover — triggered when mouse is over element */</span>
+<span class="attr">.btn:hover</span> {
+  <span class="val">background: #0099cc;</span>
+  <span class="val">transform: scale(1.05);</span>
+}
+
+<span class="comment">/* :focus — triggered when element is focused (keyboard/click) */</span>
+<span class="attr">input:focus</span> {
+  <span class="val">outline: 2px solid var(--primary-color);</span>
+  <span class="val">border-color: var(--primary-color);</span>
+}
+
+<span class="comment">/* :nth-child() — select specific children */</span>
+<span class="attr">tr:nth-child(even)</span> { <span class="val">background: rgba(0,0,0,0.05);</span> }
+<span class="attr">li:first-child</span>      { <span class="val">font-weight: bold;</span> }
+<span class="attr">li:last-child</span>       { <span class="val">border-bottom: none;</span> }
+
+<span class="comment">/* ::before / ::after — insert decorative content */</span>
+<span class="attr">.section-title::before</span> {
+  <span class="val">content: '// ';</span>
+  <span class="val">color: var(--primary-color);</span>
+}
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.8rem;margin-top:1rem;">▶ <strong>Live demo:</strong> hover the boxes below to see <code>:hover</code> + <code>:nth-child</code> in action:</p>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+        <style>.pseudo-demo li{list-style:none;padding:0.35rem 0.75rem;border-radius:6px;font-size:0.8rem;cursor:default;transition:all 0.25s;border:1px solid var(--border-glass);}
+        .pseudo-demo li:nth-child(even){background:rgba(124,58,237,0.1);}
+        .pseudo-demo li:nth-child(odd){background:rgba(0,212,255,0.08);}
+        .pseudo-demo li:hover{transform:scale(1.08);border-color:var(--accent);color:var(--accent);font-weight:700;}</style>
+        <ul class="pseudo-demo" style="display:flex;gap:0.4rem;flex-wrap:wrap;padding:0;margin:0;">
+          <li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li><li>Item 5</li><li>Item 6</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 4 · BOOTSTRAP
+     ════════════════════════════════════════════════════════════ -->
+<section id="bootstrap-section" class="section-full" aria-label="Bootstrap Section">
+  <div class="section-inner">
+    <span class="section-label reveal">Section 04</span>
+    <h2 class="section-title reveal"><span>Bootstrap</span> Framework</h2>
+    <p class="section-desc reveal">Bootstrap is the world's most popular open-source CSS framework. It provides ready-to-use components and a powerful grid system that makes building responsive websites much faster.</p>
+
+    <!-- Why Bootstrap — Comparison Table -->
+    <div class="glass-card reveal" style="margin-bottom:2rem;">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">⚖️ Bootstrap: Advantages vs Limitations</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.25rem;">A side-by-side comparison to understand when and why to use Bootstrap:</p>
+      <div style="overflow-x:auto;">
+        <table class="tags-table" aria-label="Bootstrap advantages and limitations comparison">
+          <thead>
+            <tr>
+              <th style="width:18%;">Feature</th>
+              <th style="width:41%;color:#10b981;">✅ Advantage</th>
+              <th style="width:41%;color:#f87171;">⚠️ Limitation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tag-name">Speed</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Pre-built components save hours of coding from scratch</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Full Bootstrap CSS adds extra file size (~22 KB minified + gzip)</td>
+            </tr>
+            <tr>
+              <td class="tag-name">Responsiveness</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Mobile-first design is built in by default — works on all screen sizes</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Custom breakpoints require overriding default Sass variables</td>
+            </tr>
+            <tr>
+              <td class="tag-name">Consistency</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Uniform appearance across all modern browsers automatically</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Sites can look similar to other Bootstrap sites without customisation</td>
+            </tr>
+            <tr>
+              <td class="tag-name">Components</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Buttons, navbars, modals, forms, cards — all ready to drop in</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Overriding default component styles requires high-specificity CSS</td>
+            </tr>
+            <tr>
+              <td class="tag-name">Customisation</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Easy to add custom CSS on top; full Sass variable access</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Class names are verbose and can be hard to memorise at first</td>
+            </tr>
+            <tr>
+              <td class="tag-name">Updates</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Large community, well-maintained, detailed official documentation</td>
+              <td style="color:var(--text-secondary);font-size:0.85rem;">Major version upgrades (v4 → v5) can break existing projects</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Grid System Explanation -->
+    <div class="glass-card reveal" style="margin-bottom:2rem;">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🔲 Bootstrap 5 Grid System</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">Bootstrap uses a 12-column grid system. Columns are divided across screen sizes using breakpoint classes.</p>
+      <div style="overflow-x:auto;">
+        <table class="tags-table" aria-label="Bootstrap grid breakpoints">
+          <thead><tr><th>Class</th><th>Breakpoint</th><th>Screen Width</th><th>Use Case</th></tr></thead>
+          <tbody>
+            <tr><td class="tag-name">col-</td><td>Extra Small</td><td>< 576px</td><td>Mobile phones</td></tr>
+            <tr><td class="tag-name">col-sm-</td><td>Small</td><td>≥ 576px</td><td>Large phones</td></tr>
+            <tr><td class="tag-name">col-md-</td><td>Medium</td><td>≥ 768px</td><td>Tablets</td></tr>
+            <tr><td class="tag-name">col-lg-</td><td>Large</td><td>≥ 992px</td><td>Laptops</td></tr>
+            <tr><td class="tag-name">col-xl-</td><td>Extra Large</td><td>≥ 1200px</td><td>Desktops</td></tr>
+            <tr><td class="tag-name">col-xxl-</td><td>XXL</td><td>≥ 1400px</td><td>Large displays</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Live Bootstrap Demos -->
+    <div class="glass-card reveal" style="margin-bottom:2rem;">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.5rem;">🎯 Live Bootstrap Components Demo</h3>
+
+      <!-- Navbar Demo -->
+      <p class="code-label" style="margin-bottom:0.5rem;">Bootstrap Responsive Navbar</p>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded mb-3" style="border:1px solid rgba(255,255,255,0.1);">
+        <div class="container-fluid">
+<a class="navbar-brand" href="#">🍔 Rahul Food</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bsNav" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="bsNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            </ul>
+            <span class="navbar-text">Hello, Rahul!</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Buttons -->
+      <p class="code-label" style="margin-bottom:0.5rem;">Bootstrap Buttons</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-outline-primary">Outline</button>
+        <button class="btn btn-sm btn-primary">Small</button>
+        <button class="btn btn-lg btn-success">Large</button>
+      </div>
+
+      <!-- Cards -->
+      <p class="code-label" style="margin-bottom:0.5rem;">Bootstrap Cards — Pricing</p>
+      <div class="row g-3 mb-3">
+        <div class="col-md-4">
+          <div class="card bg-dark text-white h-100" style="border:1px solid rgba(255,255,255,0.1);">
+            <div class="card-body text-center">
+              <h5 class="card-title text-info">🥗 Basic</h5>
+              <h2 class="text-white">Rs. 199<small class="fs-6">/mo</small></h2>
+              <ul class="list-unstyled text-secondary mt-2 mb-3">
+                <li>✅ 5 Meals/week</li><li>✅ Free delivery</li><li>❌ Priority support</li>
+              </ul>
+              <button class="btn btn-outline-info w-100">Choose Plan</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100" style="border:2px solid #0d6efd;background:rgba(13,110,253,0.1);">
+            <div class="card-body text-center">
+              <span class="badge bg-primary mb-2">⭐ Popular</span>
+              <h5 class="card-title" style="color:var(--text-primary)">🍱 Standard</h5>
+              <h2 style="color:var(--text-primary)">Rs. 399<small class="fs-6">/mo</small></h2>
+              <ul class="list-unstyled text-secondary mt-2 mb-3">
+                <li>✅ 10 Meals/week</li><li>✅ Free delivery</li><li>✅ Priority support</li>
+              </ul>
+              <button class="btn btn-primary w-100">Choose Plan</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark text-white h-100" style="border:1px solid rgba(255,255,255,0.1);">
+            <div class="card-body text-center">
+              <h5 class="card-title text-warning">🍽️ Premium</h5>
+              <h2 class="text-white">Rs. 699<small class="fs-6">/mo</small></h2>
+              <ul class="list-unstyled text-secondary mt-2 mb-3">
+                <li>✅ Unlimited meals</li><li>✅ Free delivery</li><li>✅ 24/7 support</li>
+              </ul>
+              <button class="btn btn-warning w-100">Choose Plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Trigger -->
+      <p class="code-label" style="margin-bottom:0.5rem;">Bootstrap Modal Window</p>
+      <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#bsDemoModal">🎯 Open Demo Modal</button>
+      <button class="btn btn-success me-2" onclick="showAlert('success')">✅ Success Alert</button>
+      <button class="btn btn-danger me-2" onclick="showAlert('danger')">❌ Error Alert</button>
+      <button class="btn btn-warning me-2" onclick="showAlert('warning')">⚠️ Warning Alert</button>
+      <button class="btn btn-info mt-2" onclick="showAlert('info')">ℹ️ Info Alert</button>
+
+      <div id="bs-alert-box" style="margin-top:1rem;"></div>
+
+      <!-- Bootstrap Form -->
+      <p class="code-label" style="margin-top:1.25rem;margin-bottom:0.5rem;">Bootstrap Contact Form</p>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label text-secondary" style="font-size:0.8rem;">Full Name</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Enter your full name">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label text-secondary" style="font-size:0.8rem;">Email</label>
+          <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="your@email.com">
+        </div>
+        <div class="col-12">
+          <label class="form-label text-secondary" style="font-size:0.8rem;">Subject</label>
+          <select class="form-select bg-dark text-white border-secondary">
+            <option>General Inquiry</option>
+            <option>Project Collaboration</option>
+            <option>Job Opportunity</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label class="form-label text-secondary" style="font-size:0.8rem;">Message</label>
+          <textarea class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Your message..."></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary">📤 Send Message</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Code Example -->
+    <div class="glass-card reveal">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">📝 Bootstrap Grid Code Example</h3>
+      <div class="code-label">bootstrap-grid.html</div>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">&lt;!-- Bootstrap 5 CDN --&gt;</span>
+<span class="tag">&lt;link <span class="attr">href</span>=<span class="val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span>&gt;</span>
+
+<span class="comment">&lt;!-- Responsive Grid: 3 columns on desktop, 1 on mobile --&gt;</span>
+<span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"container"</span>&gt;</span>
+  <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"row g-3"</span>&gt;</span>
+    <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"col-12 col-md-4"</span>&gt;</span>
+      <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"card"</span>&gt;</span>Card 1<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"col-12 col-md-4"</span>&gt;</span>
+      <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"card"</span>&gt;</span>Card 2<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"col-12 col-md-4"</span>&gt;</span>
+      <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"card"</span>&gt;</span>Card 3<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+      </div>
+    </div>
+
+    <!-- Bootstrap Utility Classes -->
+    <div class="glass-card reveal" style="margin-top:2rem;">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">🛠️ Bootstrap Utility Classes &amp; JS Dependencies</h3>
+      <div class="two-col" style="gap:2rem;">
+        <div>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">Bootstrap provides hundreds of <strong>utility classes</strong> — single-purpose CSS classes that apply one style directly in HTML without writing custom CSS.</p>
+          <div class="code-label">Commonly Used Utility Classes</div>
+          <div style="overflow-x:auto;">
+            <table class="tags-table" aria-label="Bootstrap utility classes">
+              <thead><tr><th>Class</th><th>What it does</th><th>CSS equivalent</th></tr></thead>
+              <tbody>
+                <tr><td class="tag-name">d-flex</td><td>Enable flexbox on element</td><td><code>display: flex</code></td></tr>
+                <tr><td class="tag-name">me-auto</td><td>Push items right (margin-end auto)</td><td><code>margin-right: auto</code></td></tr>
+                <tr><td class="tag-name">g-3</td><td>Gap between grid cols/rows (scale 0–5)</td><td><code>gap: 1rem</code></td></tr>
+                <tr><td class="tag-name">mt-3 / mb-3</td><td>Margin top / bottom</td><td><code>margin-top: 1rem</code></td></tr>
+                <tr><td class="tag-name">p-3 / px-4</td><td>Padding all / horizontal only</td><td><code>padding: 1rem</code></td></tr>
+                <tr><td class="tag-name">text-center</td><td>Centre-align text</td><td><code>text-align: center</code></td></tr>
+                <tr><td class="tag-name">w-100</td><td>Full width</td><td><code>width: 100%</code></td></tr>
+                <tr><td class="tag-name">d-none / d-md-block</td><td>Hide all / show from medium screens</td><td><code>display: none / block</code></td></tr>
+                <tr><td class="tag-name">fw-bold / fs-6</td><td>Font weight bold / size scale 6</td><td><code>font-weight:700 / font-size:1rem</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">Bootstrap interactive components — modals, dropdowns, tooltips — require JavaScript. Bootstrap 5 bundles <strong>Popper.js</strong> inside its JS bundle file.</p>
+          <div class="code-label">bootstrap-utilities.html</div>
+          <div class="code-block" style="font-size:0.78rem;">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">&lt;!-- bootstrap.bundle.min.js includes Popper.js --&gt;</span>
+<span class="tag">&lt;script <span class="attr">src</span>=<span class="val">"bootstrap.bundle.min.js"</span>&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Components needing Bootstrap JS + Popper --&gt;</span>
+<span class="comment">&lt;!-- Modal    → data-bs-toggle="modal"      --&gt;</span>
+<span class="comment">&lt;!-- Dropdown → data-bs-toggle="dropdown"   --&gt;</span>
+<span class="comment">&lt;!-- Tooltip  → data-bs-toggle="tooltip"    --&gt;</span>
+<span class="comment">&lt;!-- Collapse → data-bs-toggle="collapse"   --&gt;</span>
+
+<span class="comment">&lt;!-- Utility classes example --&gt;</span>
+<span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"d-flex justify-content-between align-items-center p-3 mb-3"</span>&gt;</span>
+  <span class="tag">&lt;span <span class="attr">class</span>=<span class="val">"fw-bold text-primary"</span>&gt;</span>Logo<span class="tag">&lt;/span&gt;</span>
+  <span class="tag">&lt;button <span class="attr">class</span>=<span class="val">"btn btn-sm me-2 btn-outline-secondary"</span>&gt;</span>Login<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;button <span class="attr">class</span>=<span class="val">"btn btn-sm btn-primary"</span>&gt;</span>Sign Up<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+          </div>
+          <div class="info-box" style="border-color:#0d6efd;margin-top:1rem;font-size:0.82rem;">
+            <strong>Why bootstrap.bundle.min.js?</strong> The <code>bundle</code> version already includes <strong>Popper.js v2</strong>. Without it, dropdowns, tooltips, and modals will not work — even if Bootstrap CSS is correctly loaded.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap Modal -->
+<div id="demo-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99000;align-items:center;justify-content:center;" role="dialog" aria-modal="true" aria-label="Demo modal">
+  <div style="background:var(--bg-secondary);border:1px solid var(--border-glass);border-radius:var(--radius);max-width:480px;width:90%;padding:2rem;position:relative;">
+    <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-secondary);font-size:1.5rem;cursor:pointer;line-height:1;" aria-label="Close modal">×</button>
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:0.5rem;">🎉 Bootstrap Modal Demo</h3>
+    <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:1.25rem;">This modal demonstrates Bootstrap's modal component. It uses <code>data-bs-toggle</code> attributes and can be triggered programmatically. Modals are used for dialogs, confirmations, and forms.</p>
+    <div class="alert alert-info" style="font-size:0.85rem;">ℹ️ Modals overlay the page content and focus the user's attention on a specific action.</div>
+    <div style="display:flex;gap:0.75rem;justify-content:flex-end;margin-top:1rem;">
+      <button class="btn btn-secondary btn-sm" onclick="closeModal()">Close</button>
+      <button class="btn btn-primary btn-sm" onclick="closeModal()">Got It!</button>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 5 · JAVASCRIPT
+     ════════════════════════════════════════════════════════════ -->
+<section id="js-section" class="section" aria-label="JavaScript Section">
+  <span class="section-label reveal">Section 05</span>
+  <h2 class="section-title reveal"><span>JavaScript</span> — Bringing Pages to Life</h2>
+  <p class="section-desc reveal">JavaScript is the programming language of the web. It makes web pages interactive and dynamic — from real-time clock updates to full single-page applications.</p>
+
+  <!-- Topics -->
+  <div class="topics-grid reveal" style="margin-bottom:2rem;">
+    <div class="topic-card"><span class="topic-icon">📦</span><div class="topic-name">Variables</div><div class="topic-desc"><code>let</code>, <code>const</code>, and <code>var</code> store data in memory for use throughout a program.</div></div>
+    <div class="topic-card"><span class="topic-icon">🔧</span><div class="topic-name">Functions</div><div class="topic-desc">Reusable blocks of code. Functions take inputs (parameters) and return outputs.</div></div>
+    <div class="topic-card"><span class="topic-icon">🖱️</span><div class="topic-name">Events</div><div class="topic-desc">Respond to user actions like clicks, key presses, mouse movement, and form submissions.</div></div>
+    <div class="topic-card"><span class="topic-icon">📋</span><div class="topic-name">Arrays</div><div class="topic-desc">Store collections of data. Use methods like <code>map()</code>, <code>filter()</code>, <code>forEach()</code>.</div></div>
+    <div class="topic-card"><span class="topic-icon">🔁</span><div class="topic-name">Loops</div><div class="topic-desc"><code>for</code>, <code>while</code>, and <code>forEach</code> loops repeat actions over data collections.</div></div>
+    <div class="topic-card"><span class="topic-icon">🌐</span><div class="topic-name">DOM Manipulation</div><div class="topic-desc">Access and modify HTML elements using <code>getElementById</code>, <code>querySelector</code>, and more.</div></div>
+  </div>
+
+  <!-- JS Code Reference -->
+  <div class="glass-card reveal" style="margin-bottom:2rem;">
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">📝 JavaScript Core Concepts — Code Reference</h3>
+    <div class="code-label">main.js</div>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">// 1. Variables</span>
+<span class="attr">const</span> <span class="val">name</span> = <span class="val">"Rahul"</span>;   <span class="comment">// cannot reassign</span>
+<span class="attr">let</span> <span class="val">age</span> = <span class="val">20</span>;          <span class="comment">// can reassign</span>
+
+<span class="comment">// 2. Functions</span>
+<span class="attr">function</span> <span class="val">greet</span>(person) {
+  <span class="attr">return</span> <span class="val">`Hello, ${person}!`</span>;
+}
+<span class="val">console.log</span>(greet(<span class="val">"Rahul"</span>));  <span class="comment">// "Hello, Rahul!"</span>
+
+<span class="comment">// 3. Conditionals</span>
+<span class="attr">if</span> (age >= <span class="val">18</span>) {
+  <span class="val">console.log</span>(<span class="val">"Adult"</span>);
+} <span class="attr">else</span> {
+  <span class="val">console.log</span>(<span class="val">"Minor"</span>);
+}
+
+<span class="comment">// 4. Arrays and Loops</span>
+<span class="attr">const</span> <span class="val">foods</span> = [<span class="val">"Burger"</span>, <span class="val">"Pizza"</span>, <span class="val">"Noodles"</span>];
+foods.<span class="val">forEach</span>(food => {
+  <span class="val">console.log</span>(<span class="val">`I like ${food}`</span>);
+});
+
+<span class="comment">// 5. DOM Manipulation</span>
+<span class="attr">const</span> <span class="val">btn</span> = document.<span class="val">getElementById</span>(<span class="val">"myBtn"</span>);
+btn.<span class="val">addEventListener</span>(<span class="val">"click"</span>, () => {
+  document.<span class="val">getElementById</span>(<span class="val">"output"</span>).textContent = <span class="val">"Clicked!"</span>;
+});
+
+<span class="comment">// 6. Object</span>
+<span class="attr">const</span> <span class="val">student</span> = {
+  name: <span class="val">"Rahul"</span>,
+  id: <span class="val">"bj20vx"</span>,
+  greet() { <span class="attr">return</span> <span class="val">`Hi, I'm ${this.name}`</span>; }
+};
+    </div>
+  </div>
+
+  <!-- Interactive Demos -->
+  <div class="js-demos-grid reveal">
+
+    <!-- Clock -->
+    <div class="js-demo-box">
+      <div class="js-demo-title">⏰ Digital Clock</div>
+      <div id="clock-display">00:00:00</div>
+      <div id="clock-date"></div>
+      <p style="color:var(--text-secondary);font-size:0.75rem;margin-top:0.75rem;">Uses <code>setInterval()</code> + <code>Date</code> object to update every second.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="js-demo-box" style="padding:1.25rem;">
+      <div class="js-demo-title">🔢 Calculator</div>
+      <div class="calc-display" id="calc-disp" aria-live="polite">0</div>
+      <div class="calc-grid">
+        <button class="calc-btn" onclick="calcInput('C')">C</button>
+        <button class="calc-btn" onclick="calcInput('⌫')">⌫</button>
+        <button class="calc-btn op" onclick="calcInput('%')">%</button>
+        <button class="calc-btn op" onclick="calcInput('/')">÷</button>
+        <button class="calc-btn" onclick="calcInput('7')">7</button>
+
+        <button class="calc-btn" onclick="calcInput('8')">8</button>
+        <button class="calc-btn" onclick="calcInput('9')">9</button>
+        <button class="calc-btn op" onclick="calcInput('*')">×</button>
+        <button class="calc-btn" onclick="calcInput('4')">4</button>
+        <button class="calc-btn" onclick="calcInput('5')">5</button>
+        <button class="calc-btn" onclick="calcInput('6')">6</button>
+        <button class="calc-btn op" onclick="calcInput('-')">−</button>
+        <button class="calc-btn" onclick="calcInput('1')">1</button>
+        <button class="calc-btn" onclick="calcInput('2')">2</button>
+        <button class="calc-btn" onclick="calcInput('3')">3</button>
+        <button class="calc-btn op" onclick="calcInput('+')">+</button>
+        <button class="calc-btn wide" onclick="calcInput('0')">0</button>
+        <button class="calc-btn" onclick="calcInput('.')">.</button>
+        <button class="calc-btn eq" onclick="calcInput('=')">=</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.72rem;margin-top:0.75rem;">Uses <code>Function()</code> for safe evaluation + DOM updates.</p>
+    </div>
+
+    <!-- Counter -->
+    <div class="js-demo-box">
+      <div class="js-demo-title">🔢 Counter App</div>
+      <div class="counter-display" id="counter-num" aria-live="polite">0</div>
+      <div class="counter-btns">
+        <button class="counter-btn" onclick="counterOp('-')" aria-label="Decrease">−</button>
+        <button class="counter-btn reset" onclick="counterOp('r')" aria-label="Reset">Reset</button>
+        <button class="counter-btn" onclick="counterOp('+')" aria-label="Increase">+</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.75rem;margin-top:1rem;">Uses a <code>let</code> variable + event listeners to track and display count.</p>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="js-demo-box">
+      <div class="js-demo-title">🌙 Dark / Light Mode</div>
+      <div style="font-size:3rem;margin:0.5rem 0;animation:float 3s ease infinite;">
+        <span id="theme-emoji">🌙</span>
+      </div>
+      <button class="btn-sm" onclick="toggleTheme();document.getElementById('theme-emoji').textContent=document.body.classList.contains('light-mode')?'☀️':'🌙';" aria-label="Toggle theme">Toggle Theme</button>
+      <p style="color:var(--text-secondary);font-size:0.75rem;margin-top:1rem;">Uses <code>classList.toggle()</code> on <code>document.body</code> to switch between dark and light CSS variables.</p>
+    </div>
+
+    <!-- Quote Generator -->
+    <div class="js-demo-box">
+      <div class="js-demo-title">💬 Random Quote</div>
+      <div class="quote-text" id="quote-text">"The best way to learn to code is to write code."</div>
+      <div class="quote-author" id="quote-author">— Anonymous</div>
+      <button class="btn-sm" onclick="newQuote()" aria-label="Get new quote">✨ New Quote</button>
+      <p style="color:var(--text-secondary);font-size:0.75rem;margin-top:0.75rem;">Uses an <code>Array</code> of objects + <code>Math.random()</code> for selection.</p>
+    </div>
+
+  </div>
+
+  <!-- ── Arrow Functions & Template Literals ── -->
+  <div class="two-col reveal" style="margin-top:2rem;">
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">➡️ Arrow Functions &amp; Template Literals (ES6)</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">ES6 (2015) introduced cleaner, modern JavaScript syntax. Arrow functions and template literals are now standard in all modern JS code.</p>
+      <div class="code-label">main.js — ES6 Syntax</div>
+      <div class="code-block" style="font-size:0.8rem;">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">// ── Traditional function vs Arrow function ──────────</span>
+
+<span class="comment">// Old way: function keyword</span>
+<span class="attr">function</span> <span class="val">greet</span>(name) {
+  <span class="attr">return</span> <span class="val">"Hello, " + name + "!"</span>;
+}
+
+<span class="comment">// ES6 Arrow function — shorter syntax</span>
+<span class="attr">const</span> greet = (name) => <span class="val">`Hello, ${name}!`</span>;
+
+<span class="comment">// Single param: no brackets needed</span>
+<span class="attr">const</span> double = n => n * <span class="val">2</span>;
+
+<span class="comment">// No params: empty brackets required</span>
+<span class="attr">const</span> sayHi = () => <span class="val">"Hi!"</span>;
+
+<span class="comment">// ── Template Literals ───────────────────────────────</span>
+<span class="attr">const</span> name = <span class="val">"Rahul"</span>;
+<span class="attr">const</span> course = <span class="val">"CET138"</span>;
+<span class="attr">const</span> score = <span class="val">88</span>;
+
+<span class="comment">// Old string concatenation</span>
+<span class="attr">const</span> msg1 = <span class="val">"Hello " + name + ", your score in " + course + " is " + score</span>;
+
+<span class="comment">// Template literal — backticks + ${expression}</span>
+<span class="attr">const</span> msg2 = <span class="val">`Hello ${name}, your score in ${course} is ${score}`</span>;
+
+<span class="comment">// Multi-line strings (impossible with old quotes)</span>
+<span class="attr">const</span> html = <span class="val">`
+  &lt;div class="card"&gt;
+    &lt;h2&gt;${name}&lt;/h2&gt;
+    &lt;p&gt;Score: ${score * 1.2}&lt;/p&gt;
+  &lt;/div&gt;
+`</span>;
+
+<span class="comment">// Arrow functions in array methods</span>
+<span class="attr">const</span> nums = [<span class="val">1</span>, <span class="val">2</span>, <span class="val">3</span>, <span class="val">4</span>, <span class="val">5</span>];
+<span class="attr">const</span> doubled   = nums.<span class="val">map</span>(n => n * <span class="val">2</span>);        <span class="comment">// [2,4,6,8,10]</span>
+<span class="attr">const</span> evens     = nums.<span class="val">filter</span>(n => n % <span class="val">2</span> === <span class="val">0</span>); <span class="comment">// [2,4]</span>
+<span class="attr">const</span> total     = nums.<span class="val">reduce</span>((a, b) => a + b, <span class="val">0</span>);<span class="comment">// 15</span>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">💾 localStorage &amp; Event Delegation</h3>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;"><code>localStorage</code> stores data in the browser that <strong>persists after the page closes</strong>. Event delegation attaches one listener to a parent instead of many to children.</p>
+      <div class="code-label">localStorage — Save &amp; Load Data</div>
+      <div class="code-block" style="font-size:0.8rem;">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">// localStorage only stores strings — use JSON for objects</span>
+
+<span class="comment">// SAVE — store user theme preference</span>
+localStorage.<span class="val">setItem</span>(<span class="val">'theme'</span>, <span class="val">'dark'</span>);
+
+<span class="comment">// LOAD — read on page load</span>
+<span class="attr">const</span> theme = localStorage.<span class="val">getItem</span>(<span class="val">'theme'</span>); <span class="comment">// 'dark'</span>
+
+<span class="comment">// SAVE object — must stringify first</span>
+<span class="attr">const</span> user = { name: <span class="val">"Rahul"</span>, score: <span class="val">88</span> };
+localStorage.<span class="val">setItem</span>(<span class="val">'user'</span>, JSON.<span class="val">stringify</span>(user));
+
+<span class="comment">// LOAD object — must parse back</span>
+<span class="attr">const</span> saved = JSON.<span class="val">parse</span>(localStorage.<span class="val">getItem</span>(<span class="val">'user'</span>));
+console.log(saved.name);   <span class="comment">// "Rahul"</span>
+
+<span class="comment">// DELETE one key</span>
+localStorage.<span class="val">removeItem</span>(<span class="val">'theme'</span>);
+
+<span class="comment">// CLEAR all localStorage</span>
+localStorage.<span class="val">clear</span>();
+      </div>
+      <div class="code-label" style="margin-top:1rem;">Event Delegation — one listener handles all children</div>
+      <div class="code-block" style="font-size:0.8rem;">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<span class="comment">// ❌ Bad — separate listener per button (inefficient)</span>
+document.<span class="val">querySelectorAll</span>(<span class="val">'.menu-item button'</span>)
+  .<span class="val">forEach</span>(btn => btn.<span class="val">addEventListener</span>(<span class="val">'click'</span>, handleClick));
+
+<span class="comment">// ✅ Good — ONE listener on the parent (event delegation)</span>
+document.<span class="val">getElementById</span>(<span class="val">'menu-grid'</span>)
+  .<span class="val">addEventListener</span>(<span class="val">'click'</span>, (e) => {
+
+  <span class="comment">// e.target is the element actually clicked</span>
+  <span class="attr">if</span> (e.target.<span class="val">classList.contains</span>(<span class="val">'add-to-cart'</span>)) {
+    <span class="attr">const</span> name  = e.target.<span class="val">dataset.name</span>;
+    <span class="attr">const</span> price = e.target.<span class="val">dataset.price</span>;
+    addToCart(name, price);
+  }
+});
+<span class="comment">// Works even for buttons added AFTER page load!</span>
+      </div>
+      <div class="info-box" style="border-color:#f59e0b;margin-top:1rem;font-size:0.82rem;">
+        <strong>Live demo:</strong> The shopping cart in this portfolio uses event delegation — clicking any "Add to Cart" button is caught by one listener on the menu grid parent <code>div</code>, not by individual listeners on each button.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PROJECT SHOWCASE · RAHUL FOOD DELIVERY
+     ════════════════════════════════════════════════════════════ -->
+<section id="project" class="section-full" aria-label="Project Showcase">
+  <div class="section-inner">
+    <span class="section-label reveal">Mini Project</span>
+    <h2 class="section-title reveal">🍔 Rahul Food <span>Delivery</span></h2>
+    <p class="section-desc reveal">A fully interactive food ordering demo built with HTML structure, CSS styling, Bootstrap layout, and JavaScript for cart functionality — demonstrating all 4 frontend technologies together.</p>
+
+    <div class="reveal" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;">
+      <span class="badge badge-blue">HTML5</span>
+      <span class="badge badge-purple">CSS3</span>
+      <span class="badge badge-green">Bootstrap 5</span>
+      <span class="badge badge-yellow">JavaScript</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start;" class="reveal">
+      <!-- Menu -->
+      <div>
+        <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.25rem;">🍽️ Our Menu</h3>
+        <div class="menu-grid">
+          <div class="menu-item"><span class="menu-emoji">🍔</span><div class="menu-name">Classic Burger</div><div class="menu-price">Rs. 250</div><div class="menu-desc">Juicy beef with fresh veggies</div><button class="add-to-cart" onclick="addToCart('Classic Burger', 250)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🍕</span><div class="menu-name">Cheese Pizza</div><div class="menu-price">Rs. 500</div><div class="menu-desc">Double cheese with tomato sauce</div><button class="add-to-cart" onclick="addToCart('Cheese Pizza', 500)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🍜</span><div class="menu-name">Spicy Noodles</div><div class="menu-price">Rs. 180</div><div class="menu-desc">Chicken noodles with veggies</div><button class="add-to-cart" onclick="addToCart('Spicy Noodles', 180)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🍗</span><div class="menu-name">Fried Chicken</div><div class="menu-price">Rs. 320</div><div class="menu-desc">Crispy golden fried chicken</div><button class="add-to-cart" onclick="addToCart('Fried Chicken', 320)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🥗</span><div class="menu-name">Fresh Salad</div><div class="menu-price">Rs. 150</div><div class="menu-desc">Healthy seasonal mixed salad</div><button class="add-to-cart" onclick="addToCart('Fresh Salad', 150)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🧃</span><div class="menu-name">Fresh Juice</div><div class="menu-price">Rs. 100</div><div class="menu-desc">Orange, Mango, or Lemon</div><button class="add-to-cart" onclick="addToCart('Fresh Juice', 100)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🍰</span><div class="menu-name">Chocolate Cake</div><div class="menu-price">Rs. 200</div><div class="menu-desc">Rich dark chocolate slice</div><button class="add-to-cart" onclick="addToCart('Chocolate Cake', 200)">+ Add to Cart</button></div>
+          <div class="menu-item"><span class="menu-emoji">🥤</span><div class="menu-name">Milkshake</div><div class="menu-price">Rs. 180</div><div class="menu-desc">Strawberry, vanilla, or oreo</div><button class="add-to-cart" onclick="addToCart('Milkshake', 180)">+ Add to Cart</button></div>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="cart-panel">
+        <div class="cart-title">🛒 Your Cart</div>
+        <div id="cart-items"><p class="cart-empty">🛒 Your cart is empty</p></div>
+        <div class="cart-total-row">
+          <span>Total:</span>
+          <span class="cart-total-amt" id="cart-total">Rs. 0</span>
+        </div>
+        <button id="checkout-btn" onclick="checkout()">🎉 Place Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SKILLS SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section id="skills" class="section" aria-label="Skills">
+  <span class="section-label reveal">My Skills</span>
+  <h2 class="section-title reveal">Technical <span>Skills</span></h2>
+  <p class="section-desc reveal">Proficiency levels based on coursework, projects, and practice.</p>
+
+  <div class="skills-grid reveal">
+    <div class="glass-card">
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">🔤 HTML5</span><span class="skill-pct">95%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="95"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">🎨 CSS3</span><span class="skill-pct">90%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">📦 Bootstrap 5</span><span class="skill-pct">88%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
+      </div>
+    </div>
+    <div class="glass-card">
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">⚡ JavaScript</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">📱 Responsive Design</span><span class="skill-pct">90%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">🌐 Frontend Development</span><span class="skill-pct">92%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="92"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     CONTACT SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section id="contact" class="section-full" aria-label="Contact">
+  <div class="section-inner">
+    <span class="section-label reveal">Get In Touch</span>
+    <h2 class="section-title reveal">Contact <span>Me</span></h2>
+    <p class="section-desc reveal">Have a question or want to collaborate? Send me a message and I'll get back to you!</p>
+
+    <div class="contact-grid reveal">
+      <!-- Contact Info -->
+      <div>
+        <div class="glass-card" style="margin-bottom:1.5rem;">
+          <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1rem;">📋 Contact Details</h3>
+          <ul class="contact-info-list">
+            <li>
+              <div class="ci-icon">👤</div>
+              <div><div class="ci-label">Full Name</div><div class="ci-value">Rahul Kumar Yadav</div></div>
+            </li>
+            <li>
+              <div class="ci-icon">🆔</div>
+              <div><div class="ci-label">Canvas ID</div><div class="ci-value">bj20vx</div></div>
+            </li>
+            <li>
+              <div class="ci-icon">📧</div>
+              <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:btit25a.rhl@ismt.edu.np" style="color:var(--accent);text-decoration:none;">btit25a.rhl@ismt.edu.np</a></div></div>
+            </li>
+            <li>
+              <div class="ci-icon">📱</div>
+              <div><div class="ci-label">Phone</div><div class="ci-value">+977 9709148535</div></div>
+            </li>
+            <li>
+              <div class="ci-icon">📚</div>
+              <div><div class="ci-label">Module</div><div class="ci-value">CET138 Full Stack Development</div></div>
+            </li>
+            <li>
+              <div class="ci-icon">📍</div>
+              <div><div class="ci-label">Location</div><div class="ci-value">Biratnagar, Kanchanbari, Nepal</div></div>
+            </li>
+
+          </ul>
+        </div>
+        <!-- Map (Google Maps embed) -->
+        <div class="glass-card">
+          <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:0.75rem;">📍 Location Map</h3>
+          <div class="map-embed-wrap" style="background:rgba(0,212,255,0.03);border:1px dashed rgba(0,212,255,0.25);border-radius:var(--radius-sm);">
+            <iframe
+              class="map-embed"
+              title="Biratnagar Kanchanbari Airport Road - Google Maps"
+              src="https://www.google.com/maps?output=embed&q=Kanchanbari%20Airport%20Road%20Biratnagar"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div style="padding:0.75rem 0.5rem 0.25rem;">
+            <div style="font-size:0.85rem;color:var(--text-secondary);">Biratnagar, Kanchanbari, Nepal</div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">Biratnagar Airport Road area</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="glass-card">
+        <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.5rem;">✉️ Send a Message</h3>
+        <div class="form-group">
+          <label class="form-label" for="cf-name">Your Name</label>
+          <input type="text" id="cf-name" class="form-input" placeholder="Enter your full name" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-email">Email Address</label>
+          <input type="email" id="cf-email" class="form-input" placeholder="your@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-subject">Subject</label>
+          <select id="cf-subject" class="form-select">
+            <option value="">Select a subject</option>
+            <option>General Inquiry</option>
+            <option>Project Collaboration</option>
+            <option>Job Opportunity</option>
+            <option>Assignment Question</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-message">Message</label>
+          <textarea id="cf-message" class="form-textarea" placeholder="Write your message here..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="submitForm()" style="width:100%;">📤 Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────── -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-name">Rahul Kumar Yadav</div>
+        <div class="footer-brand-sub">Junior Full Stack Developer · CET138 Assignment 1</div>
+        <p style="color:var(--text-secondary);font-size:0.82rem;margin-bottom:1rem;max-width:280px;">Passionate about building modern, responsive, and accessible web experiences using the latest frontend technologies.</p>
+        <div class="footer-social">
+          <a href="mailto:btit25a.rhl@ismt.edu.np" class="social-btn" aria-label="Email" title="Email">✉️</a>
+          <a href="#" class="social-btn" aria-label="GitHub" title="GitHub">💻</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn" title="LinkedIn">💼</a>
+          <a href="#" class="social-btn" aria-label="Twitter" title="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#home">🏠 Home</a></li>
+          <li><a href="#about">👤 About</a></li>
+          <li><a href="#fsd">🌐 Full Stack Dev</a></li>
+          <li><a href="#html-section">🔤 HTML</a></li>
+          <li><a href="#css-section">🎨 CSS</a></li>
+        </ul>
+      </div>
+
+      <!-- More Links -->
+      <div>
+        <div class="footer-col-title">More</div>
+        <ul class="footer-links">
+          <li><a href="#bootstrap-section">📦 Bootstrap</a></li>
+          <li><a href="#js-section">⚡ JavaScript</a></li>
+          <li><a href="#project">🍔 Project</a></li>
+          <li><a href="#skills">💡 Skills</a></li>
+          <li><a href="#contact">📬 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links" style="line-height:2;">
+          <li style="color:var(--text-secondary);font-size:0.83rem;">📧 btit25a.rhl@ismt.edu.np</li>
+          <li style="color:var(--text-secondary);font-size:0.83rem;">📱 +977 9709148535</li>
+          <li style="color:var(--text-secondary);font-size:0.83rem;">🆔 Canvas ID: bj20vx</li>
+          <li style="color:var(--text-secondary);font-size:0.83rem;">📍 Biratnagar, Kanchanbari, Nepal</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2026 <span>Rahul Kumar Yadav</span>. All rights reserved. · CET138 Full Stack Development Portfolio · ISMT College Biratnagar
+        
+      </div>
+      <div class="footer-made">
+        Built with 🔤 HTML · 🎨 CSS · 📦 Bootstrap · ⚡ JS
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Real Bootstrap 5 Modal -->
+<div class="modal fade" id="bsDemoModal" tabindex="-1"
+     aria-labelledby="bsDemoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white"
+         style="border:1px solid rgba(0,212,255,0.3);border-radius:16px;">
+      <div class="modal-header"
+           style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <h5 class="modal-title" id="bsDemoModalLabel">🎯 Bootstrap 5 Modal Demo</h5>
+        <button type="button" class="btn-close btn-close-white"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="line-height:1.8;">
+        <p>This is a <strong>real Bootstrap 5 modal</strong> triggered using
+           <code>data-bs-toggle="modal"</code> and
+           <code>data-bs-target="#bsDemoModal"</code> — no custom JavaScript required.</p>
+        <p style="color:#8892b0;font-size:0.85rem;margin-top:0.75rem;">
+          Bootstrap automatically handles the fade animation, dark backdrop,
+          close on Esc key, and close on backdrop click — all fully built in.
+        </p>
+      </div>
+      <div class="modal-footer"
+           style="border-top:1px solid rgba(255,255,255,0.1);">
+        <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">✅ Confirm Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+
+
+<!-- Inline gradient animation for CSS demo (no conflicts) -->
+<style>
+@keyframes gradMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+section#css-section div[style*="gradMove"] {
+  animation: gradMove 3s ease infinite !important;
+}
+</style>
+
+</body>
+</html>
